@@ -9,18 +9,18 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
-	
+
 	public static BorderPane root;
 	public static FXMLFactory booter;
-	
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
+
 			root = new BorderPane();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(Main.class.getResource("application.css").toExternalForm());
-			
+
 			booter = new FXMLFactory();
 			booter.createMenuBar();
 			ChatControler controler = booter.createChat();

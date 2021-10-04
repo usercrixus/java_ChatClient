@@ -8,7 +8,7 @@ public class RMIManager {
 	public static RMIManager rmi;
 	private String ip;
 
-	public RMIManager(String ip) {
+	private RMIManager(String ip) {
 
 		if (System.getSecurityManager() == null) {
 			System.setProperty("java.security.policy","file:./securityPolicy.policy");

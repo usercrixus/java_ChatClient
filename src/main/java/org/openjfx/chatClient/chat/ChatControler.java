@@ -22,8 +22,8 @@ public class ChatControler implements SocketMsgObserver, SocketStatusObserver {
 	private TextField textFieldServerIp;
 	@FXML
 	private TextField textFieldServerPort;
-    @FXML
-    private TextField textFieldPseudo;
+	@FXML
+	private TextField textFieldPseudo;
 	@FXML
 	private TextField textFieldSend;
 	@FXML
@@ -50,7 +50,7 @@ public class ChatControler implements SocketMsgObserver, SocketStatusObserver {
 		clientSocket.subscribeStatus(this);
 		clientSocket.connect();
 	}
-	
+
 	/**
 	 * on disconnect button clicked, close the server ; release the port
 	 */
@@ -86,7 +86,7 @@ public class ChatControler implements SocketMsgObserver, SocketStatusObserver {
 		clientSocket.sendMsg(valueString);
 		textFieldSend.clear();
 	}
-	
+
 	/**
 	 * Manage button status (enable/disable)
 	 * 1 = connected
@@ -112,7 +112,7 @@ public class ChatControler implements SocketMsgObserver, SocketStatusObserver {
 	public void updateMsg(String msg) {
 		textArea.appendText(msg);
 	}
-	
+
 	//-----------Getter-Setter---------
 
 	public TextField getTextFieldServerPort() {

@@ -2,19 +2,8 @@ package org.openjfx.chatClient.menu;
 
 
 import java.io.IOException;
-
 import org.openjfx.chatClient.Main;
-import org.openjfx.chatClient.chat.ChatControler;
-import org.openjfx.chatClient.utilities.FXMLFactory;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 public class MenuBarControler {
 

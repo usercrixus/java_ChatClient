@@ -17,56 +17,56 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class FXMLFactory {
-	
+
 	ChatControler chatControler;
-	
+
 	public FXMLFactory() {}
-	
+
 	public ChatControler createChat() throws IOException {
 		FXMLLoader loader = loadFXML("Chat");
 		Main.root.setCenter(loader.load());
-		
+
 		chatControler = loader.getController();
-		
+
 		return chatControler;
 	}
-	
+
 	public void createMenuBar() throws IOException {
 		FXMLLoader loader = loadFXML("menu/MenuBar");
 		loader.setController(new MenuBarControler());
 		Main.root.setTop(loader.load());
 	}
-	
-    public void createServerManagerWindow() throws IOException {
+
+	public void createServerManagerWindow() throws IOException {
 		FXMLLoader loader = loadFXML("menu/windows/ServerManager");
 		loader.setController(new ServerManagerControler());
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		Stage windowsManagerServer = new Stage();
-		
+
 		windowsManagerServer.setScene(scene);
 		windowsManagerServer.initModality(Modality.WINDOW_MODAL);
 		windowsManagerServer.initOwner(chatControler.getTextFieldServerIp().getScene().getWindow());
 		windowsManagerServer.setTitle("Ip Manager");
-		
+
 		windowsManagerServer.show();
-    }
-    
-    public void createClientListWindow() throws IOException {
+	}
+
+	public void createClientListWindow() throws IOException {
 		FXMLLoader loader = loadFXML("menu/windows/ClientList");
 		loader.setController(new ClientListControler());
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		Stage windowsClientList = new Stage();
-		
+
 		windowsClientList.setScene(scene);
 		windowsClientList.initModality(Modality.WINDOW_MODAL);
 		windowsClientList.initOwner(chatControler.getTextFieldServerIp().getScene().getWindow());
 		windowsClientList.setTitle("Ip Manager");
-		
+
 		windowsClientList.show();
-    }
-    
+	}
+
 	public void createAboutWindow() {
 		Alert popUp = new Alert(AlertType.INFORMATION);
 		popUp.setGraphic(null);
@@ -76,8 +76,8 @@ public class FXMLFactory {
 		popUp.setContentText("Develloped by By Supra (2021/01)");
 		popUp.show();
 	}
-    
-    
+
+
 	public static FXMLLoader loadFXML(String fxml) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
 		return fxmlLoader;
@@ -87,5 +87,5 @@ public class FXMLFactory {
 		return chatControler;
 	}
 
-	
+
 }

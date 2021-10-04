@@ -17,11 +17,11 @@ public class SocketClient implements SocketObservable {
 	Socket socketClient;
 	BufferedReader in;
 	PrintWriter out;
-	
+
 	String ip;
 	int port;
 	String pseudo;
-	
+
 	ArrayList<SocketMsgObserver> msgObservers;
 	ArrayList<SocketStatusObserver> statusObservers;
 
@@ -30,7 +30,7 @@ public class SocketClient implements SocketObservable {
 		statusObservers = new ArrayList<>();
 
 		this.ip = ip;
-		
+
 		try {
 			this.port = Integer.parseInt(port);
 			if(this.port < 1024 || this.port > 65535) {
@@ -39,7 +39,7 @@ public class SocketClient implements SocketObservable {
 		} catch (NumberFormatException  e) {
 			this.port = 50000;
 		}
-		
+
 		if(pseudo == "") pseudo = "Anonymous";
 		this.pseudo = pseudo;
 	}
@@ -62,16 +62,16 @@ public class SocketClient implements SocketObservable {
 				});
 				getMessageThread.start();
 				sendMsg(this.pseudo);
-				
+
 				RMIManager.createRMI(ip);
-				
+
 				notifyStatus(1);
 			}			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Close the server ; release port
 	 * @throws IOException
